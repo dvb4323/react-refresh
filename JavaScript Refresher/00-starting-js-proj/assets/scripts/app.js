@@ -69,3 +69,66 @@ console.log(hobbies);
 console.log(hobbies.findIndex((item) => item === "Sports"));
 const editedHobbies = hobbies.map((item) => item + "!");
 console.log(editedHobbies);
+
+//destructuring
+const [firstName, lastName] = ["Max", "Beo"];
+
+console.log(firstName);
+console.log(lastName);
+
+const { name, age } = {
+  name: "Max",
+  age: 34,
+};
+
+//special spread
+const mergedHobbies = [...hobbies, ...editedHobbies];
+console.log(mergedHobbies);
+
+const extendedUser = {
+  isAdmin: true,
+  ...user,
+};
+
+//control Structure
+const password = prompt("Your password");
+
+if (password === "hello") {
+  console.log("work");
+} else {
+  console.log("access not granted");
+}
+
+for (const hobby of hobbies) {
+  console.log(hobby);
+}
+
+//function as value
+function handleTimeout() {
+  console.log("Timed out!");
+}
+
+const handleTimeout2 = () => {
+  console.log("Timed out ...again@");
+};
+
+setTimeout(handleTimeout, 2000);
+
+function greeter(greetFn) {
+  greetFn();
+}
+
+greeter(() => console.log("hi"));
+
+//function in function
+function init() {
+  function greet() {
+    console.log("hi");
+  }
+
+  greet();
+}
+init();
+
+//primitive: string, num, boolean : new, old thrown away - reference
+//object: reference
